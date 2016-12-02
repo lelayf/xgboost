@@ -175,6 +175,13 @@ xgb.Booster.check <- function(bst, saveraw = TRUE) {
 #' })
 #' plot(err, type='l', ylim=c(0,0.1), xlab='#trees')
 #'
+#' @rdname predict
+#' @export
+predict <- function(x, ...){
+  UseMethod("predict")
+}
+
+
 #' @rdname predict.xgb.Booster
 #' @export
 predict.xgb.Booster <- function(object, newdata, missing = NA,
